@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naive Bayes Tool</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Binary Naive Bayes Classifier</h1>
+        <div id="step-1" class="step">
+            <label for="num-attributes">Enter the Number of Attributes(excluding the last binary attribute):</label>
+            <input type="number" id="num-attributes" min="1" placeholder="Number of attributes">
+            <button onclick="setAttributes()">Submit</button>
+        </div>
+        <div id="step-2" class="step hidden">
+            <h3>Enter Attribute Names and the Value Names for Each Attributes</h3>
+            <div id="attribute-names-container"></div>
+            <label for="output-name">Enter the Name of the Binary Output Attribute:</label>
+            <input type="text" id="output-name" placeholder="Default: output">
+            <label for="binary-output-values">Enter Possible Binary Values (comma-separated):</label>
+            <input type="text" id="binary-output-values" placeholder="e.g., Yes, No">
+            <div class="button-container">
+                <button onclick="confirmAttributes()">Confirm</button>
+            </div>
+        </div>
+        <div id="step-3" class="step hidden">
+            <h3>Enter Data for Each Row</h3>
+            <div id="row-inputs-container"></div>
+            <button onclick="addRow()">Add Row</button>
+            <button onclick="generateTable()">Generate Table</button>
+        </div>
+        <div id="step-4" class="step hidden">
+            <h3>Generated Table</h3>
+            <div id="table-container"></div>
+            <button onclick="editTable()">Edit Table</button>
+            <button onclick="lockTable()">Lock Table</button>
+        </div>
+        <div id="step-5" class="step hidden">
+            <h3>Input New Instance</h3>
+            <div id="new-instance-container"></div>
+            <button onclick="calculateProbabilities()">Calculate Probabilities</button>
+        </div>
+        <div id="step-6" class="step hidden">
+            <div id="results-container"></div>
+            <button onclick="resetTool()">Reset</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
